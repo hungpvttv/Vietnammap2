@@ -1,0 +1,136 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  /* hoặc kích thước tối đa mong muốn */
+  margin: 0 auto;
+}
+
+.map-container img,
+#mapCanvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#mapCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#vietnam-map {
+  width: 100%;
+  height: 100%;
+}
+
+.tooltip-box {
+  width: 30vw;
+  min-width: 200px;
+  max-width: 350px;
+  background-color: #f0f8ff;
+  opacity: 0.9;
+  border-radius: 12px;
+  padding: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  position: absolute;
+  text-align: center;
+  z-index: 1000;
+  transition: left 0.1s ease-out, top 0.1s ease-out;
+  pointer-events: none;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.tooltip-box.active {
+  display: block !important;
+}
+
+.tooltip-box h2 {
+  text-align: center;
+  color: #2b55b4;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.tooltip-box .highlight {
+  color: #2b55b4;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tooltip-box hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* Media queries cho điện thoại */
+@media screen and (max-width: 768px) {
+  .tooltip-box {
+      width: 85vw;
+      /* Giảm xuống để phù hợp với màn hình điện thoại */
+      min-width: 150px;
+      max-width: 300px;
+      font-size: 14px;
+      padding: 8px;
+      max-height: 60vh;
+  }
+
+  .tooltip-box h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+
+  .tooltip-box h3 {
+      font-size: 14px;
+      margin: 8px 0;
+  }
+
+  .tooltip-box p {
+      margin: 5px 0;
+      font-size: 13px;
+  }
+
+  .tooltip-box hr {
+      margin: 5px 0;
+  }
+
+  .tooltip-box .highlight {
+      font-size: 13px;
+  }
+}
+
+/* Media queries cho điện thoại nhỏ hơn */
+@media screen and (max-width: 375px) {
+  .tooltip-box {
+      width: 90vw;
+      min-width: 120px;
+      max-width: 250px;
+      font-size: 12px;
+      padding: 6px;
+  }
+}
